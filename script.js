@@ -2038,7 +2038,7 @@ function get_weather(divs_lons, divs_lats, divs_properties, divs_types) {
       //assign 'value_snow' variable to a created 'span' (i.e. space into which content can be inserted)
       const value_snow = document.createElement('span');
       //insert most recent forecasted snow into 'value_snow' span (API JSON file contains forecasted snow at every 3 hours for given day)
-      value_snow.innerHTML = snow_at_point.hourly.snowfall[Math.floor(hour_point / 3)] + 'mm snowfall in last hour' 
+      value_snow.innerHTML = snow_at_point.hourly.snowfall[Math.floor(hour_point / 3)] + 'cm snowfall in last hour' 
       //add 'value_prec' span to the created section 'item_snow', and add 'item_snow' section into planner (i.e. display snow in planner)
       item_snow.appendChild(value_snow);
       nearby_w.appendChild(item_snow);

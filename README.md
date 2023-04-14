@@ -4,7 +4,7 @@ This repository contains the code and data for this collaborative project on cyc
 
 GTAccess to Cycling hopes to inspire more people to start cycling in the GTA by providing a wide range of GTA cycling-related information and resources in one application, from introductory cycling terms to advanced planning tools for current and potential cyclists.
 
-The webpage: https://ireo00.github.io/GTAccesstoCycling/
+The webpage: https://anamariiaz.github.io/GTAccesstoCycling/
 
 *This web map is missing Halton Region because can't find relevant data on the internet.
 
