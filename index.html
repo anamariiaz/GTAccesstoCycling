@@ -1,6 +1,11 @@
+<!-- specify the doctype as html such that this file is interpretable -->
 <!DOCTYPE html>
+
+<!-- set the "lang" attribute to English to specify the language of this file's text content -->
 <html lang="en">
+
 <head>
+    <!-- provide the metadata for the web page corresponding to this file (set the character encoding, specify the view of the page on devices of different sizes) -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +27,7 @@
     <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
     <title>GTAccess to Cycling</title>
 </head>
+
 <body>
      <!-- define the navbar using https://getbootstrap.com/docs/5.3/components/navbar/  -->
      <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -39,62 +45,71 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <!-- specify that the web page should redirect to the local purpose.html file when "Purpose" is clicked in the navbar while on the "Home" page -->
                 <a class="nav-link" href="purpose.html">Purpose</a>
               </li>
               <li class="nav-item">
-                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <!-- specify that the web page should redirect to the local instructions.html file when "Instructions" is clicked in the navbar while on the "Home" page -->
                 <a class="nav-link" href="instructions.html">Instructions</a>
               </li>
               <li class="nav-item">
-                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <!-- specify that the web page should redirect to the local definitions.html file when "Definitions" is clicked in the navbar while on the "Home" page -->
                 <a class="nav-link" href="definitions.html">Definitions</a>
               </li>
               <li class="nav-item">
-                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <!-- specify that the web page should redirect to the local data.html file when "Data" is clicked in the navbar while on the "Home" page -->
                 <a class="nav-link" href="data.html">Data</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    <!-- MAP CONTAINER -->
+    
+    <!-- define a new section which will have the map embedded within it --> 
     <div id='map1' class = 'map'></div>
 
-    <!-- NAVIGATION ELEMENTS -->
+    <!-- define a new section on top of the map (for the geocoder and return button) --> 
     <div class='map-overlay-search'>
-        <label>Search for location</label>
-        <div id="geocoder" class="geocoder"></div>
-        <button type="button" class="btn btn-primary btn-sm" id="returnbutton">Return to full view</button>
+      <!-- specify the label of the geocoder -->
+      <label>Search for location</label>
+      <!-- define a new section within the 'map-overlay-search' which will have the geocoder embedded within it -->
+      <div id="geocoder" class="geocoder"></div>
+      <!-- create a button below the geocoder that will return to original view when clicked  -->
+      <button type="button" class="btn btn-primary btn-sm" id="returnbutton">Return to full view</button>
     </div>
 
-    <!-- INTERACTIVITY -->
+    <!-- define a new section on top of the map (for the toggle menu)-->
     <div class='map-overlay-data'>
-        <label>Filter map view</label>
+      <!-- specify the label of the toggle menu -->
+      <label>Filter map view</label>
 
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="layercheck1" checked>
-            <label id="label_shops" class="form-check-label" for="flexCheckChecked">
-            </label>
-        </div>
+      <!-- define a new section within the 'map-overlay-data' which contains a "checkbox" form that will be used for toggling the Bike Shops layer and will have a corresponding label -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="layercheck1" checked>
+        <label id="label_shops" class="form-check-label" for="flexCheckChecked">
+        </label>
+      </div>
 
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="layercheck3" checked>
-            <label id="label_parking" class="form-check-label" for="flexCheckChecked">
-            </label>
-        </div>
+      <!-- define a new section within the 'map-overlay-data' which contains a "checkbox" form that will be used for toggling the Bike Shares layer and will have a corresponding label -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="layercheck3" checked>
+        <label id="label_parking" class="form-check-label" for="flexCheckChecked">
+        </label>
+      </div>
 
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="layercheck2" checked>
-            <label id="label_bikeshare" class="form-check-label" for="flexCheckChecked">
-            </label>
-        </div>
+      <!-- define a new section within the 'map-overlay-data' which contains a "checkbox" form that will be used for toggling the Bike Parkings layer and will have a corresponding label -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="layercheck2" checked>
+        <label id="label_bikeshare" class="form-check-label" for="flexCheckChecked">
+        </label>
+      </div>
     </div>
 
-    <!-- define a new section for the dropdown menu-->
+    <!-- define a new section for the 2 dropdown menus-->
     <div class='map-overlay-dropdown'>
-    <form>
+      <form>
         <fieldset id="tobikelanetype">
+            <!-- specify the label of the dropdown menu and the options -->
             <label>Select Bike Lane Type/Traffic</label>
             <select id="bikelane" name="bikelane">
                 <option value="" disabled selected>bike lane types/traffic...</option>
@@ -108,54 +123,70 @@
                 <option value="All">Show all</option>
             </select>
         </fieldset>
-   </form> 
-   <br>
-   <form>
-    <fieldset id="weathertype">
-        <label>Select Weather</label><br>
-        <select id="weather" name="weather">
-            <option value="" disabled selected>weather types...</option>
-            <option value="None">None</option>
-            <option value="Temperature">Temperature</option>
-            <option value="Precipitation">Precipitation</option>
-            <option value="Snowfall">Snowfall</option>
-            <option value="Wind Speed">Wind Speed</option>
-        </select>
-    </fieldset>
-</form>     
+      </form> 
+      <br>
+      <form>
+        <fieldset id="weathertype">
+            <!-- specify the label of the 2nd dropdown menu and the options -->
+            <label>Select Weather</label><br>
+            <select id="weather" name="weather">
+                <option value="" disabled selected>weather types...</option>
+                <option value="None">None</option>
+                <option value="Temperature">Temperature</option>
+                <option value="Precipitation">Precipitation</option>
+                <option value="Snowfall">Snowfall</option>
+                <option value="Wind Speed">Wind Speed</option>
+            </select>
+        </fieldset>
+      </form>     
     </div>
 
 
+     <!-- define a new section on top of the map (for the planner) --> 
     <div class='map-overlay-planner'>
-        <button type="button" class="collapsible" id="collapsible">Plan Your Trip!</button>
-        <div class="content" id="content">
+      <!-- create a button that will collapse the planner when clicked  -->
+      <button type="button" class="collapsible" id="collapsible">Plan Your Trip!</button>
+      <!-- define a new section within the 'map-overlay-planner' which will contain its content -->
+      <div class="content" id="content">
         <p id="instructions">Click anywhere on the map</p>
+        <!-- define a new section on top of the map (for the slider)-->
         <div class="slider_div" id="slider_div">
-            <label>buffer radius:<span id="radius_value"></span></label>
-            <input id="slider" type="range" min="0" max="1.5" step="0.5" value="0">
+          <!-- specify the (initial) text associated with the slider value-->
+          <label>buffer radius:<span id="radius_value"></span></label>
+            <!-- define the slider and specify its bounds and step value -->
+          <input id="slider" type="range" min="0" max="1.5" step="0.5" value="0">
         </div>
+        <!-- create a button that will activate the buffer the planner when clicked  -->
         <button type="button" class="btn btn-primary btn-sm" id="bufferbutton">GO</button>
+        <!-- define a new section within the 'map-overlay-planner' which will contain the nearby amenities -->
         <div id='nearby' class='nearby'>
         </div>
-        </div>
+      </div>
     </div>
 
+     <!-- define a new section on top of the map (for the bikeways, traffic, and weather legend) -->
     <div class='map-overlay-legend'>
+      <!-- create a button that will collapse the legend when clicked  -->
       <button type="button" class="collapsible" id="legend_collapsible"></button>
+      <!-- define a new section within the 'map-overlay-legend' which will contain its content -->
       <div class="legend_content" id="legend_content">
+        <!-- section for bikeways/traffic legend -->
         <div id='legend'>
           <h5 id="legend_bikeways_title"></h5>
           <div id="legend_discrete"></div>
         </div>
         <br>
+        <!-- section for weather legend -->
         <div id='legend_weather'>
-            <h5 id="legend_weather_title"></h5>
-            <div id="legend_colorbar"></div>
+          <h5 id="legend_weather_title"></h5>
+          <div id="legend_colorbar"></div>
           </div>
         </div>
     </div>
 
-    
+ <!-- provide links to the local script.js file (which allows the functionality of the page) -->    
 <script src="script.js"></script>
+
 </body>
+
 </html>
