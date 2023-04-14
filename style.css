@@ -1,0 +1,157 @@
+/* specify formatting of the map contained in the class "map" */
+.map {
+    position: absolute;
+    top: 50px; /* place maps below the navbar */
+    bottom: 0;
+    width: 100%; 
+}
+
+/* specify formatting of the section that includes the checkbox toggle menu contained in the class 'map-overlay-data' */
+.map-overlay-data {
+    position: relative;
+    font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background: rgba(249, 249, 249, 0.8);
+    top: 0px;
+    left: 0;
+    width: 260px;
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    /*around elements inside of overlay*/
+    overflow: visible;
+}
+
+/* specify formatting of the section that includes the bikeways, traffic, and weather legend contained in the class 'map-overlay-legend'*/
+.map-overlay-legend {
+    position: absolute;
+    font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background: rgba(249, 249, 249, 0.8);
+    bottom: 20px;
+    right: 0px;
+    width: 230px;
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    /*around elements inside of overlay*/
+    overflow: visible;
+}
+
+/* specify formatting of the section that includes the geocoder and return button contained in the class 'map-overlay-search'*/
+.map-overlay-search {
+    position: relative;
+    font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background: rgba(249, 249, 249, 0.8);
+    top: 0px;
+    left: 0;
+    width: 260px;
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    /*around elements inside of overlay*/
+    overflow: visible;
+}
+
+/* specify formatting of the section that includes the dropdown street and weather menus contained in the class 'map-overlay-dropdown' */
+.map-overlay-dropdown {
+    position: relative;
+    font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background: rgba(249, 249, 249, 0.8);
+    top: 0px;
+    left: 0;
+    width: 260px;
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    /*around elements inside of overlay*/
+    overflow: visible;
+}
+
+/* specify formatting of the 'geocoder'*/
+.geocoder {
+    position: relative;
+    margin: 10px 0 10px;
+}
+
+/* style the buttons that are used to open and close the collapsible 'Plan Your Trip!' menu as well as the collapsible bikeways, traffic, and weather legend (contained in the class 'collapsible') */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+  
+  /* add a background color to the 'Plan Your Trip!' button and bikeways, traffic, and weather legend button if they are clicked on or hovered over */
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+
+/* specify formatting of the content within the 'Plan Your Trip!' menu contained in the class 'content' */
+.content {
+    padding: 0 18px;
+    display: none;
+    background-color: #f1f1f1;
+    height: 150px;
+    overflow-y: scroll; /*make content scrollable*/
+}
+
+/* specify formatting of the content within the bikeways, traffic, and weather legend contained in the class 'legend_content' */
+.legend_content {
+    padding: 0 18px;
+    background-color: #f1f1f1;
+}
+
+/* specify formatting of the section that includes the planner contained in the class 'map-overlay-planner' */
+.map-overlay-planner {
+    position: relative;
+    font: 14px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background: rgba(249, 249, 249, 0.8);
+    top: 0px;
+    left: 0;
+    width: 260px;
+    margin: 10px 0 0 10px;
+    padding: 10px;
+    /*around elements inside of overlay*/
+    overflow: visible;
+}
+
+/* specify formatting of any nearby amenities listed within the planner contained in the class 'divs' */
+.divs:hover{
+    background-color:#FF0000; /*change their color to red when hovered over*/
+ }
+
+/* specify formatting of the bikeways and traffic legend's key (i.e. lines) contained in the class 'legend-key' */
+.legend-key {
+    display: inline-block;
+    border-radius: 0%; 
+    height: 5px; /* adjust height to make small horizontal lines */
+    width: 35px; /* adjust height to make small horizontal lines */
+    margin-right: 5px; /*specify position of lines*/
+}
+
+/* specify formatting of the icon associated with the toggle menu's Bike Shops contained in the class "label-key-shops" */
+.label-key-shops {
+    display: inline-block;
+    border-radius: 0%; 
+    height: 12px; /*specify height of the box*/
+    width: 12px; /*specify width of the box*/
+    margin-right: 5px; /*specify position of box*/
+}
+
+/* specify formatting of the icon associated with the toggle menu's Toronto BikeShare contained in the class "label-key-bikeshare" */
+.label-key-bikeshare {
+    display: inline-block;
+    border-radius: 0%;
+    height: 12px;  /*specify height of the box*/
+    width: 12px; /*specify width of the box*/
+    margin-right: 5px; /*specify position of box*/
+}
+
+/* specify formatting of the icon associated with the toggle menu's Toronto Bike Parking contained in the class "label-key-parking"*/
+.label-key-parking {
+    display: inline-block;
+    border-radius: 0%; 
+    height: 12px; /*specify height of the box*/
+    width: 12px; /*specify width of the box*/
+    margin-right: 5px; /*specify position of box*/
+}

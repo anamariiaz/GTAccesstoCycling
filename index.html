@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- mapbox API -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+     <!-- mapbox geocoder plugin -->
+     <script
+         src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+     <link rel="stylesheet"
+         href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+         type="text/css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Turf -->
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    <title>GTAccess to Cycling</title>
+</head>
+<body>
+     <!-- define the navbar using https://getbootstrap.com/docs/5.3/components/navbar/  -->
+     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <!-- define the title for the navbar as "Navigate" and specify that the web page should not redirect when this title is clicked --> 
+          <a class="navbar-brand" href="#">GTAccess to Cycling</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <!-- specify that the web page should not redirect when "Home" is clicked in the navbar while on the "Home" page -->
+                <!-- specify that the "Home" button of the navbar should be highlighted while on the "Home" page  -->
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <a class="nav-link" href="purpose.html">Purpose</a>
+              </li>
+              <li class="nav-item">
+                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <a class="nav-link" href="instructions.html">Instructions</a>
+              </li>
+              <li class="nav-item">
+                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <a class="nav-link" href="definitions.html">Definitions</a>
+              </li>
+              <li class="nav-item">
+                <!-- specify that the web page should redirect to the local more_info.html file when "More Info" is clicked in the navbar while on the "Home" page -->
+                <a class="nav-link" href="data.html">Data</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- MAP CONTAINER -->
+    <div id='map1' class = 'map'></div>
+
+    <!-- NAVIGATION ELEMENTS -->
+    <div class='map-overlay-search'>
+        <label>Search for location</label>
+        <div id="geocoder" class="geocoder"></div>
+        <button type="button" class="btn btn-primary btn-sm" id="returnbutton">Return to full view</button>
+    </div>
+
+    <!-- INTERACTIVITY -->
+    <div class='map-overlay-data'>
+        <label>Filter map view</label>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="layercheck1" checked>
+            <label id="label_shops" class="form-check-label" for="flexCheckChecked">
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="layercheck3" checked>
+            <label id="label_parking" class="form-check-label" for="flexCheckChecked">
+            </label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="layercheck2" checked>
+            <label id="label_bikeshare" class="form-check-label" for="flexCheckChecked">
+            </label>
+        </div>
+    </div>
+
+    <!-- define a new section for the dropdown menu-->
+    <div class='map-overlay-dropdown'>
+    <form>
+        <fieldset id="tobikelanetype">
+            <label>Select Bike Lane Type/Traffic</label>
+            <select id="bikelane" name="bikelane">
+                <option value="" disabled selected>bike lane types/traffic...</option>
+                <option value="Bike Lane">Bike Lane</option>
+                <option value="Multi-Use Trail">Multi-Use Trail</option>
+                <option value="Sharrows">Sharrows</option>
+                <option value="Cycle Track">Cycle Track</option>
+                <option value="Paved Shoulder">Paved Shoulder</option>
+                <option value="Hiking/Park Trail">Hiking/Park Trail</option>
+                <option value="Traffic">Traffic</option>
+                <option value="All">Show all</option>
+            </select>
+        </fieldset>
+   </form> 
+   <br>
+   <form>
+    <fieldset id="weathertype">
+        <label>Select Weather</label><br>
+        <select id="weather" name="weather">
+            <option value="" disabled selected>weather types...</option>
+            <option value="None">None</option>
+            <option value="Temperature">Temperature</option>
+            <option value="Precipitation">Precipitation</option>
+            <option value="Snowfall">Snowfall</option>
+            <option value="Wind Speed">Wind Speed</option>
+        </select>
+    </fieldset>
+</form>     
+    </div>
+
+
+    <div class='map-overlay-planner'>
+        <button type="button" class="collapsible" id="collapsible">Plan Your Trip!</button>
+        <div class="content" id="content">
+        <p id="instructions">Click anywhere on the map</p>
+        <div class="slider_div" id="slider_div">
+            <label>buffer radius:<span id="radius_value"></span></label>
+            <input id="slider" type="range" min="0" max="1.5" step="0.5" value="0">
+        </div>
+        <button type="button" class="btn btn-primary btn-sm" id="bufferbutton">GO</button>
+        <div id='nearby' class='nearby'>
+        </div>
+        </div>
+    </div>
+
+    <div class='map-overlay-legend'>
+      <button type="button" class="collapsible" id="legend_collapsible"></button>
+      <div class="legend_content" id="legend_content">
+        <div id='legend'>
+          <h5 id="legend_bikeways_title"></h5>
+          <div id="legend_discrete"></div>
+        </div>
+        <br>
+        <div id='legend_weather'>
+            <h5 id="legend_weather_title"></h5>
+            <div id="legend_colorbar"></div>
+          </div>
+        </div>
+    </div>
+
+    
+<script src="script.js"></script>
+</body>
+</html>

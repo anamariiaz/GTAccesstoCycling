@@ -1,0 +1,228 @@
+<!-- specify the doctype as html such that this file is interpretable -->
+<!DOCTYPE html>
+
+<!-- set the "lang" attribute to English to specify the language of this file's text content -->
+<html lang="en">
+
+<head>
+  <!-- provide the metadata for the web page corresponding to this file (set the character encoding, specify the view of the page on devices of different sizes) -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- define a title for the web page (that will appear in the browser) -->
+  <title>GTAccess to Cycling</title>
+  <!-- provide scripts & links to the Mapbox API, and links to the local style.css file and external Bootstrap CSS library (which specify the style of the page) -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- define the navbar using https://getbootstrap.com/docs/5.3/components/navbar/  -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- define the title for the navbar as "Navigate" and specify that the web page should not redirect when this title is clicked -->
+      <a class="navbar-brand" href="#">GTAccess to Cycling</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local index.html file when "Home" is clicked in the navbar while on the "Instructions" page -->
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local purpose.html file when "Purpose" is clicked in the navbar while on the "Instructions" page -->
+            <a class="nav-link" aria-current="page" href="purpose.html">Purpose</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should not redirect when "Instructions" is clicked in the navbar while on the "Instructions" page -->
+            <!-- specify that the "Instructions" button of the navbar should be highlighted while on the "Instructions" page  -->
+            <a class="nav-link active" href="#">Instructions</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local definitions.html file when "Definitions" is clicked in the navbar while on the "Instructions" page -->
+            <a class="nav-link" aria-current="page" href="definitions.html">Definitions</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local data.html file when "Data" is clicked in the navbar while on the "Instructions" page -->
+            <a class="nav-link" href="data.html">Data</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- define a new section with a "container" class that allows the use of the Bootstrap grid system -->
+  <div class="container">
+
+    <!-- define a new row and centre all content of the row -->
+    <div class="row justify-content-center" >
+      <!-- define a new column which takes up 8 Bootstrap column units -->
+      <div class="col-8">
+        <!-- define a new section within the column which has centered text within it -->
+        <div class="text-center">
+          <!-- specify text to be displayed at a heading 1 level -->
+          <h1>Instructions</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- define a new row and centre all content of the row -->
+    <div class="row justify-content-center">
+      <!-- define a new column which takes up 8 Bootstrap column units -->
+      <div class="col-8">
+        <!-- define a new section within the column which has centered text within it -->
+        <div class="text-left">
+          <!-- define a new section with a specified color -->
+          <div style="background-color:#DDEDEA">
+            <!-- specify text to be displayed at various levels -->
+            <h3>Want to learn more about available biking resources in the GTA?</h3>
+            <h5>To get a comprehensive overview of cycling resources...</h5>
+            <p>
+              Zoom into the map and watch the clusters change to show you the highest density of bike shops, parkings, and shares at any zoom level.
+              <br>
+              <br>
+              Note the classification system used to group all GTA bikeways into the 6 categories of Bike Lane, Cycle Track, Multi-Use Trail, Sharrows, Paved Shoulder, and Hiking/Park Trail. See the <i>Definitions</i> tab for more information on this classification.
+            </p>
+          </div>
+          <!-- define a new section with a specified color -->
+          <div style="background-color:#DAEAF6">
+            <!-- specify text to be displayed at various levels -->
+            <h3>Have a preference for biking near specific facilities, on specific biking infrastruture, or under specific conditions? Want to know where you should bike?</h3>
+            <h5>To filter bike facilities and view current conditions...</h5>
+            <p>
+              Use the toggle menu by clicking on the check boxes for each of the bicycle shops, parkings, and shares to
+              control which of these facilities are visible on the map.
+              <br>
+              <br>
+              Use the dropdown menu for GTA streets to select whether traffic or bikeways (1 type or all types) are
+              visible on the map. Note that traffic conditions are retrieved from the Mapbox Traffic API - see the <i>Data</i> tab for more information.
+              <br>
+              <br>
+              Use the weather dropdown menu to select which weather conditions (temperature, precipitation, snow, wind speed) to view on the map.
+              Note that weather conditions are retrieved from the Open-Meteo Weather API and are computed at the centroid of each GTA municipality. Weather conditions are updated every 3 hours. Temperature is specified at 2m above ground, total precipitation is specified as the sum of rain, showers, and snow over the last available hour, snowfall is specified over the last available hour, and wind speed is specified at 10m above ground. See the <i>Data</i> tab for more information.
+            </p>
+          </div>
+            <!-- define a new section with a specified color -->
+          <div style="background-color:#E8DFF5">
+            <!-- specify text to be displayed at various levels -->
+            <h3>Have a particular bike facility in mind?</h3>
+            <h5>To find out more about a given bike facility...</h5>
+            <p>
+              Use the geocoder search menu to locate any bike shop, parking, share or bikeway on the map.
+              <br>
+              <br>
+              Click on the desired facility to bring up a popup with available important information about the facility. Note that cursors change when hovering over any element that can be clicked. Also note that the opacity of bikeways changes when hovered to help you locate their start and end points.
+              <br>
+              <h6>For Toronto BikeShare...</h6>
+              Where information is available, popups show the name, address, live number of available bikes and live number of available docks. Note that this live data is retrieved from the Toronto BikeShare API which updates in real-time - see the <i>Data</i> tab for more information.
+              <br>
+              <br>
+              <h6>For Toronto bike shops...</h6>
+              Where information is available and applicable, popups show the name, address, postal code, ward, unit number, city, phone number, email, and whether the shop provides rentals. 
+              <br>
+              <br>
+              <h6>For GTA (outside of Toronto) bike shops...</h6>
+              Where information is available and applicable, popups show the name, address, postal code, unit number, city, phone number, email, website, FaceBook site, and open hours. 
+              <br>
+              <br>
+              <h6>For Toronto bike parkings...</h6>
+              Where information is available and applicable, popups show the name, address, postal code, ward, city, parking type (rack, stands, etc.), and parking capacity.
+              <br>
+              <br>
+              <h6>For GTA (outside of Toronto) bike parkings...</h6>
+              Where information is available and applicable, popups show the name, whether the parking is covered, whether the parking has a fee, the parking type (rack, stands, etc.), and parking capacity.
+              <br>
+              <br>
+              <h6>For Toronto bikeways...</h6>
+              Where information is available and applicable, popups show the name, the bikeway type on one side of the street as specified by the data source (Facility 1), the bikeway type on the other side of the street as specified by the data source (Facility 2), and how the bikeway was classified into the 6 categories of the map (Classification).
+              <br>
+              <br>
+              <h6>For York Region bikeways...</h6>
+              Where information is available and applicable, popups show the name, the bikeway type as specified by the data source (Facility), how the bikeway was classified into the 6 categories of the map (Classification), the surface that the bikeway is on, and the municipality of York Region that it is located in.
+              <br>
+              <br>
+              <h6>For Peel Region bikeways...</h6>
+              Where information is available and applicable, popups show the name, the bikeway type as specified by the data source (Facility), how the bikeway was classified into the 6 categories of the map (Classification), the surface that the bikeway is on, and the municipality of Peel Region that it is located in.
+              <br>
+              <br>
+              <h6>For Durham Region bikeways...</h6>
+              Where information is available and applicable, popups show the name of the bikeway. The bikeway type was not available, hence the classifications of all such bikeways is listed as 'Not Available'.
+              <br>
+              <br>
+              <h6>For Milton bikeways...</h6>
+              Where information is available and applicable, popups show the bikeway type as specified by the data source (Facility), how the bikeway was classified into the 6 categories of the map (Classification), and the surface that the bikeway is on.
+              <br>
+              <br>
+              <h6>For Burlington bikeways...</h6>
+              Where information is available and applicable, popups show the street name, the bikeway type as specified by the data source (Facility), and how the bikeway was classified into the 6 categories of the map (Classification). Note that the data source for bikeways in Burlington groups them using an acronym system - see the Burlington data source in the <i>Data</i> tab for more information.
+              <br>
+              <br>
+              <h6>For Oakville bikeways...</h6>
+              Where information is available and applicable, popups show the bikeway type as specified by the data source (Facility), how the bikeway was classified into the 6 categories of the map (Classification), and the surface that the bikeway is on. Note that the data source for bikeways in Oakville groups them using a numbering system - see the Oakville data source in the <i>Data</i> tab for more information.
+              <br>
+              <br>
+              <h6>For Ajax bikeways...</h6>
+              Where information is available and applicable, popups show the bikeway type as specified by the data source (Facility), how the bikeway was classified into the 6 categories of the map (Classification), and the street name.
+              <br>
+              <br>
+              <h6>For Whitby bikeways...</h6>
+              Where information is available and applicable, popups show the bikeway type as specified by the data source (Facility), how the bikeway was classified into the 6 categories of the map (Classification), and the street name.
+            </p>
+          </div>
+          <!-- define a new section with a specified color -->
+          <div style="background-color:#FCE1E4">
+            <!-- specify text to be displayed at various levels -->
+            <h3>Planning a biking trip?</h3>
+            <h5>To find resources for your next biking trip...</h5>
+            <p>
+              Click the "Plan Your Trip!" menu. It will prompt you to select any location on the map by clicking on it -
+              the geocoder search function can also be used to find a location to click on.
+              <br>
+              <br>
+              Once the location is selected, click "GO". A slider will appear which allows you to select the size of a
+              circular buffer region surrounding the point. Toggle the slider to select desired buffer size.
+              <br>
+              <br>
+              For every selected buffer, a list of all available amenities (bike shops, bike parkings, bike shares) within
+              the buffer radius and all bikeways that intersect the buffer radius, as well as a summary of weather conditions at the clicked point, will be provided in the planning menu. 
+              <br>
+              <br>
+              Click on any bike shop, parking, or share listed in the planning menu to centre the map around it and bring up its popup with important available information.
+              <br>
+              <br>
+              To select a new point, click 'CLOSE' and repeat these steps.
+            </p>
+          </div>
+          <!-- define a new section with a specified color -->
+          <div style="background-color:#FCF4DD">
+            <!-- specify text to be displayed at various levels -->
+            <h3>Want to learn more about biking facilities in urban environments?</h3>
+            <h5>To find out more information...</h5>
+            <p>
+              Click the <i>Definitions</i> tab for an overview of all bikeway types used in the map.
+              <br>
+              <br>
+            Click the <i>Data</i> tab for redirections to all data sources used in the map.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- provide link to the external Bootstrap Javascript bundle (which allow the functionality of the page) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

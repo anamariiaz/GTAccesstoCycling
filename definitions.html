@@ -1,0 +1,145 @@
+<!-- specify the doctype as html such that this file is interpretable -->
+<!DOCTYPE html>
+
+<!-- set the "lang" attribute to English to specify the language of this file's text content -->
+<html lang="en">
+
+<head>
+    <!-- provide the metadata for the web page corresponding to this file (set the character encoding, specify the view of the page on devices of different sizes) -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- define a title for the web page (that will appear in the browser) -->
+    <title>GTAccess to Cycling</title>
+    <!-- provide scripts & links to the Mapbox API, and links to the local style.css file and external Bootstrap CSS library (which specify the style of the page) --> 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- define the navbar using https://getbootstrap.com/docs/5.3/components/navbar/  -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- define the title for the navbar as "Navigate" and specify that the web page should not redirect when this title is clicked --> 
+      <a class="navbar-brand" href="#">GTAccess to Cycling</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local index.html file when "Home" is clicked in the navbar while on the "Definitions" page -->
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local purpose.html file when "Purpose" is clicked in the navbar while on the "Definitions" page -->
+            <a class="nav-link" aria-current="page" href="purpose.html">Purpose</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local instructions.html file when "Instructions" is clicked in the navbar while on the "Definitions" page -->
+            <a class="nav-link" aria-current="page" href="instructions.html">Instructions</a>
+          </li>  
+          <li class="nav-item">
+            <!-- specify that the web page should not redirect when "Definitions" is clicked in the navbar while on the "Definitions" page -->
+            <!-- specify that the "Definitions" button of the navbar should be highlighted while on the "Definitions" page  -->
+            <a class="nav-link active" href="#">Definitions</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local data.html file when "Data"" is clicked in the navbar while on the "Definitions" page -->
+            <a class="nav-link" href="data.html">Data</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- define a new section with a "container" class that allows the use of the Bootstrap grid system -->
+  <div class="container"> 
+
+    <!-- define a new row and centre all content of the row -->
+    <div class="row justify-content-center"> 
+        <!-- define a new column which takes up 8 Bootstrap column units -->
+        <div class="col-8">
+            <!-- define a new section within the column which has centered text within it -->
+            <div class="text-center">
+                <!-- specify text to be displayed at a heading 1 level -->
+                <h1>Definitions</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- define a new row and centre all content of the row -->
+    <div class="row justify-content-center">
+      <!-- define a new column which takes up 8 Bootstrap column units --> 
+      <div class="col-8">
+        <!-- define a new section within the column which has centered text within it -->
+        <div class="text-center">
+          <!-- specify text to be displayed at a variety of levels which contains links that open in the same window-->
+          
+          <h3>Bike Lane</h3>
+          <p>
+            A bike lane is a section of the road that has been specifically marked for the preferred or exclusive use of bicycles through pavement markers, signs, and striping.
+            <a href="https://nacto.org/publication/urban-bikeway-design-guide/bike-lanes/#:~:text=A%20Bike%20Lane%20is%20defined,or%20exclusive%20use%20of%20bicyclists"> View source here! </a>
+            <br>
+            <img src = "https://www.markham.ca/wps/wcm/connect/markham/8f0e4be2-923a-4ccb-802a-23900d6743d6/3/BF_Bike+Lanes.png?MOD=AJPERES">
+          </p> 
+
+          <h3>Cycle Track</h3>
+          <p>
+            A cycle track is a specialized bicycle facility that blends a segregated path's user experience with a traditional bike lane's on-street infrastructure. A cycle track is separate from the sidewalk and physically isolated from motor traffic.
+            <a href="https://nacto.org/publication/urban-bikeway-design-guide/cycle-tracks/"> View source here! </a>
+            <br>
+            <img src = "https://www.markham.ca/wps/wcm/connect/markham/8f0e4be2-923a-4ccb-802a-23900d6743d6/1/BF_Cycle+Track.png?MOD=AJPERES">
+          </p>
+
+          <h3>Multi-Use Trail</h3>
+          <p>
+            Multi-use trails are created with the intention of accommodating various types of users on the same pathway. This requires that the trail is specifically marked for use by cyclists and pedestrians.
+            <a href="https://www.toronto.ca/wp-content/uploads/2017/11/96a5-TORONTO_TRAIL_DESIGN_GUIDELINES.pdf"> View source here! </a>
+            <br>
+            <img src = "https://www.markham.ca/wps/wcm/connect/markham/8f0e4be2-923a-4ccb-802a-23900d6743d6/2/BF_+Muli+Path.png?MOD=AJPERES">
+          </p>
+
+          <h3>Sharrows</h3>
+          <p>
+            Sharrows refer to markings painted on a road to indicate that bicycles and cars share the same lane. This is intended to create a shared environment for both types of vehicles.
+            <a href="https://nacto.org/publication/urban-bikeway-design-guide/bikeway-signing-marking/shared-lane-markings/#:~:text=Shared%20Lane%20Markings%20(SLMs)%2C,environment%20for%20bicycles%20and%20automobiles."> View source here! </a> 
+            <br>
+            <img src = "https://www.markham.ca/wps/wcm/connect/markham/8f0e4be2-923a-4ccb-802a-23900d6743d6/4/BF_+Shared+Road.png?MOD=AJPERES">
+          </p>
+
+          <h3>Paved Shoulder</h3>
+          <p>
+            A paved shoulder is a section of a road that is designed to provide space for stopped or emergency vehicles, pedestrians, and cyclists. These are typically found on rural roads. The purpose of a paved shoulder is to increase the distance between cyclists and motor vehicles on a roadway that is shared by both, thereby enhancing safety.
+            <a href="https://www.markham.ca/wps/portal/home/neighbourhood-services/walking-and-cycling/cycling/Bicycle-Facility-and-Common-Signs/01-bicycle-facilities#:~:text=Paved%20shoulder%20are%20portion%20of,vehicles%20on%20a%20shared%20roadway."> View source here! </a>
+            <br>
+            <img src = "https://www.markham.ca/wps/wcm/connect/markham/8f0e4be2-923a-4ccb-802a-23900d6743d6/5/BF_+Paved.png?MOD=AJPERES">
+          </p>
+        
+          <h3>Hiking/Park Trail</h3>
+          <p>
+            This trail is usually found in parks or in hiking areas.
+            <br>
+            <img src = "https://www.markham.ca/wps/wcm/connect/markham/8f0e4be2-923a-4ccb-802a-23900d6743d6/6/BF_Trails.png?MOD=AJPERES">
+          </p>
+
+          <br>
+          <p>
+            <a href="https://www.markham.ca/wps/portal/home/neighbourhood-services/walking-and-cycling/cycling/Bicycle-Facility-and-Common-Signs/01-bicycle-facilities#:~:text=Paved%20shoulder%20are%20portion%20of,vehicles%20on%20a%20shared%20roadway."> Images Source </a> 
+          </p>
+
+        </div>  
+      </div>      
+    </div>
+        
+  </div>
+
+  <!-- provide links to the external Bootstrap Javascript bundle (which allow the functionality of the page) --> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

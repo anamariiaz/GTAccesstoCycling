@@ -1,0 +1,117 @@
+<!-- specify the doctype as html such that this file is interpretable -->
+<!DOCTYPE html>
+
+<!-- set the "lang" attribute to English to specify the language of this file's text content -->
+<html lang="en">
+
+<head>
+  <!-- provide the metadata for the web page corresponding to this file (set the character encoding, specify the view of the page on devices of different sizes) -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- define a title for the web page (that will appear in the browser) -->
+  <title>GTAccess to Cycling</title>
+  <!-- provide scripts & links to the Mapbox API, and links to the local style.css file and external Bootstrap CSS library (which specify the style of the page) -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- define the navbar using https://getbootstrap.com/docs/5.3/components/navbar/  -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- define the title for the navbar as "Navigate" and specify that the web page should not redirect when this title is clicked -->
+      <a class="navbar-brand" href="#">GTAccess to Cycling</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local index.html file when "Home" is clicked in the navbar while on the "Purpose" page -->
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should not redirect when "Purpose" is clicked in the navbar while on the "Purpose" page -->
+            <!-- specify that the "Purpose" button of the navbar should be highlighted while on the "Purpose" page  -->
+            <a class="nav-link active" href="#">Purpose</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local instructions.html file when "Instructions" is clicked in the navbar while on the "Purpose" page -->
+            <a class="nav-link" aria-current="page" href="instructions.html">Instructions</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local definitions.html file when "Definitions" is clicked in the navbar while on the "Purpose" page -->
+            <a class="nav-link" aria-current="page" href="definitions.html">Definitions</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local data.html file when "Data" is clicked in the navbar while on the "Purpose" page -->
+            <a class="nav-link" href="data.html">Data</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- define a new section with a "container" class that allows the use of the Bootstrap grid system -->
+  <div class="container">
+
+    <!-- define a new row and centre all content of the row -->
+    <div class="row justify-content-center">
+      <!-- define a new column which takes up 8 Bootstrap column units -->
+      <div class="col-8">
+        <!-- define a new section within the column which has centered text within it -->
+        <div class="text-center">
+          <!-- specify text to be displayed at a heading 1 level -->
+          <h1>Purpose</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- define a new row and centre all content of the row -->
+    <div class="row justify-content-center">
+      <!-- define a new column which takes up 8 Bootstrap column units -->
+      <div class="col-8">
+        <!-- define a new section within the column which has centered text within it -->
+        <div class="text-left">
+          <!-- specify text to be displayed at various levels-->
+          <h4><b>Objectives</b></h4>
+          <p>
+            As cities continue to grow and the number of cars on the roads increases, urban mobility becomes an increasingly important issue (Gonzalo-Orden et al., 2014). Congestion and air pollution through increased greenhouse gas emissions are some challenges posed by this growth in traffic (Tektelic, 2022). Moreover, the COVID-19 pandemic has made cycling more popular, as many people see it as a safer and more socially distanced mode of transportation (Büchel et al., 2022). Active, sustainable transportation, such as cycling, can be an effective solution to these challenges while also promoting physical activity and healthy living (Mueller et al., 2015).
+          </p>
+          <p>
+            Thus, to tackle this issue of sustainable mobility and build upon existing cycling maps, we have developed the web application <i>GTAccess to Cycling</i>. As implied by its name, the focus of the app is the GTA, which is divided into five regions: Toronto, Durham, Halton, Peel, and York regions. <i>GTAccess to Cycling</i> provides a wide range of GTA cycling-related information and resources in one location, from introductory urban bikeway distinctions to advanced planning tools, hence catering to a diverse audience of current and prospective cyclists. The app combines details present in otherwise independent sources into a fully interactive setting, highlighting existing bike shops and bike parking facilities, presenting and distinguishing amongst the most common bikeway types, and showcasing bike share stations with their live number of available bikes and docks. Further, it fills the gap that existing cycling maps have in condition information by incorporating real-time weather and traffic data, hence creating a more thorough resource for cyclists. Overall, <i>GTAccess to Cycling</i> aims to both encourage more people to embrace cycling as a mode of transportation in the GTA, and to promote safety and well-being while cycling in urban environments.
+          </p>
+          <br>
+          <h4><b>References</b></h4>
+          <p>
+            Büchel, B., Marra, A. D., & Corman, F. (2022). COVID-19 as a window of opportunity for cycling: Evidence from the first wave. Transport Policy, 116, 144–156. https://doi.org/10.1016/j.tranpol.2021.12.003
+            <br>
+            <br>
+            Gonzalo-Orden, H., Linares, A., Velasco, L., Díez, J. M., & Rojo, M. (2014). Bikeways and cycling urban mobility. Procedia - Social and Behavioral Sciences, 160, 567-576. DOI:10.1016/j.sbspro.2014.12.170
+            <br>
+            <br>
+            Mueller, N., Rojas-Rueda, D., Cole-Hunter, T., de Nazelle, A., Dons, E., Gerike, R., Götschi, T., Int Panis, L., Kahlmeier, S., & Nieuwenhuijsen, M. (2015). Health Impact Assessment of Active Transportation: A systematic review. Preventive Medicine, 76, 103–114. https://doi.org/10.1016/j.ypmed.2015.04.010 
+            <br>
+            <br>
+            Tektelic. (2022). 5 Step Guide On Creating A Clean City Using IoT. Tektelic Communications. https://www.tektelic.com/expertise/5-steps-guide-on-creating-a-clean-city-using-iot/
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- provide links to the external Bootstrap Javascript bundle (which allow the functionality of the page) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

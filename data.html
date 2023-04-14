@@ -1,0 +1,148 @@
+<!-- specify the doctype as html such that this file is interpretable -->
+<!DOCTYPE html>
+
+<!-- set the "lang" attribute to English to specify the language of this file's text content -->
+<html lang="en">
+
+<head>
+  <!-- provide the metadata for the web page corresponding to this file (set the character encoding, specify the view of the page on devices of different sizes) -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- define a title for the web page (that will appear in the browser) -->
+  <title>GTAccess to Cycling</title>
+  <!-- provide scripts & links to the Mapbox API, and links to the local style.css file and external Bootstrap CSS library (which specify the style of the page) -->
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css' rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- define the navbar using https://getbootstrap.com/docs/5.3/components/navbar/  -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- define the title for the navbar as "Navigate" and specify that the web page should not redirect when this title is clicked -->
+      <a class="navbar-brand" href="#">GTAccess to Cycling</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local index.html file when "Home" is clicked in the navbar while on the "Data" page -->
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local purpose.html file when "Purpose" is clicked in the navbar while on the "Data" page -->
+            <a class="nav-link" aria-current="page" href="purpose.html">Purpose</a>
+          </li>
+          <li class="nav-item">
+             <!-- specify that the web page should redirect to the local instructions.html file when "Instructions" is clicked in the navbar while on the "Data" page -->
+            <a class="nav-link" aria-current="page" href="instructions.html">Instructions</a>
+          </li>
+          <li class="nav-item">
+            <!-- specify that the web page should redirect to the local definitions.html file when "Definitions" is clicked in the navbar while on the "Data" page -->
+            <a class="nav-link" aria-current="page" href="definitions.html">Definitions</a>
+          </li>
+          <li class="nav-item">
+             <!-- specify that the web page should not redirect when "Data" is clicked in the navbar while on the "Data" page -->
+            <!-- specify that the "Data" button of the navbar should be highlighted while on the "Data" page  -->
+            <a class="nav-link active" href="#">Data</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- define a new section with a "container" class that allows the use of the Bootstrap grid system -->
+  <div class="container">
+
+    <!-- define a new row and centre all content of the row -->
+    <div class="row justify-content-center">
+      <!-- define a new column which takes up 8 Bootstrap column units -->
+      <div class="col-8">
+        <!-- define a new section within the column which has centered text within it -->
+        <div class="text-center">
+          <!-- specify text to be displayed at a heading 1 level -->
+          <h1>Data</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- define a new row and centre all content of the row -->
+    <div class="row justify-content-center">
+      <!-- define a new column which takes up 8 Bootstrap column units -->
+      <div class="col-8">
+        <!-- define a new section within the column which has centered text within it -->
+        <div class="text-left">
+          <!-- specify text to be displayed at various levels -->
+          <h4><b>Non-API Data Sources</b></h4>
+          <h5>Bikeways</h5>
+          <!-- specify text to be displayed in an unordered list with links that open to new pages in the same tab-->
+          <ul>
+            <li> <a href="https://open.toronto.ca/dataset/cycling-network/"> Toronto Cycling Network </a> </li>
+            <li> <a href="https://insights-york.opendata.arcgis.com/datasets/york::bike-path"> York Region Cycling Network </a> </li>
+            <li> <a href="https://data.peelregion.ca/datasets/RegionofPeel::trails"> Peel Region Cycling Network </a> </li>
+            <li> <a href="https://opendata.durham.ca/maps/DurhamRegion::cycle-tour-routes"> Durham Region Cycling Network </a> </li>
+            <li> <a href="https://discover-milton.hub.arcgis.com/datasets/Milton::cycle-routes"> Milton Cycling Network </a> </li>
+            <li> <a href="https://navburl-burlington.opendata.arcgis.com/datasets/Burlington::cycling-network"> Burlington Cycling Network </a> </li>
+            <li> <a href="https://portal-exploreoakville.opendata.arcgis.com/datasets/ExploreOakville::cycling-routes"> Oakville Cycling Network </a> </li>
+            <li> <a href="https://opendata.ajax.ca/datasets/TownofAjax::active-transportation"> Ajax Cycling Network </a> </li>
+            <li> <a href="https://geohub-whitby.hub.arcgis.com/datasets/Whitby::cycling-routes"> Whitby Cycling Network </a> </li>
+          </ul>
+          <br>
+          <!-- specify text to be displayed at an h5 level -->
+          <h5>Bike Shops</h5>
+          <!-- specify text to be displayed in an unordered list with links that open to new pages in the same tab-->
+          <ul>
+            <li> <a href="https://open.toronto.ca/dataset/bicycle-shops/"> Toronto Bike Shops </a> </li>
+            <li> <a href="https://www.openstreetmap.org/"> Rest of GTA Bike Shops </a> </li>
+          </ul>
+          <br>
+          <!-- specify text to be displayed at an h5 level -->
+          <h5>Bike Parkings</h5>
+          <!-- specify text to be displayed in an unordered list with links that open to new pages in the same tab -->
+          <ul>
+            <li> <a href="https://open.toronto.ca/dataset/street-furniture-bicycle-parking/"> Toronto Bike Parkings </a> </li>
+            <li> <a href="https://www.openstreetmap.org/"> Rest of GTA Bike Parkings </a> </li>
+          </ul>
+          <br>
+          <!-- specify text to be displayed at an h5 level -->
+          <h5>Municipality Boundaries</h5>
+          <!-- specify text to be displayed in an unordered list with links that open to new pages in the same tab -->
+          <ul>
+            <li> <a href="https://open.toronto.ca/dataset/former-municipality-boundaries/"> Toronto Municipality Boundaries</a> </li>
+            <li> <a href="https://insights-york.opendata.arcgis.com/datasets/york::municipal-boundary"> York Region Municipality Boundaries</a> </li>
+            <li> <a href="https://data.peelregion.ca/datasets/RegionofPeel::municipal-boundary"> Peel Region Municipality Boundaries</a> </li>
+            <li> <a href="https://opendata.durham.ca/datasets/DurhamRegion::municipal-boundaries"> Durham Region Municipality Boundaries</a> </li>
+            <li> <a href="https://discover-milton.hub.arcgis.com/datasets/Milton::milton-boundary-5"> Milton Municipality Boundaries</a> </li>
+            <li> <a href="https://navburl-burlington.opendata.arcgis.com/datasets/Burlington::city-outline"> Burlington Municipality Boundaries</a> </li>
+            <li> <a href="https://portal-exploreoakville.opendata.arcgis.com/datasets/ExploreOakville::town-boundary"> Oakville Municipality Boundaries</a> </li>
+          </ul>
+          <br>
+          <!-- specify text to be displayed at an h4 level -->
+          <h4><b>API Data Sources</b></h4>
+          <!-- specify text to be displayed in an unordered list with links that open to new pages in the same tab -->
+          <ul>
+            <li>  <a href="https://ckan0.cf.opendata.inter.prod-toronto.ca/en/dataset/bike-share-toronto"> Toronto Bike Share </a> </li>
+            <li>  <a href="https://open-meteo.com/"> Open-Meteo Weather </a> </li>
+            <li>  <a href="https://docs.mapbox.com/data/tilesets/reference/mapbox-traffic-v1/"> Mapbox Traffic </a> </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- provide links to the external Bootstrap Javascript bundle (which allow the functionality of the page) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
